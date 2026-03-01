@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Favorite Developer, Mg</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#1a1a2e,#16213e,#0f3460);
+    font-family: 'Segoe UI', sans-serif;
+    overflow:hidden;
+}
+
+/* Floating hearts */
+.heart{
+    position:absolute;
+    color:#ff4da6;
+    animation:float 6s linear infinite;
+    font-size:20px;
+}
+
+@keyframes float{
+    0%{transform:translateY(100vh); opacity:0;}
+    20%{opacity:1;}
+    100%{transform:translateY(-10vh); opacity:0;}
+}
+
+/* Envelope */
+.envelope-wrapper{
+    position:relative;
+    cursor:pointer;
+    z-index:2;
+}
+
+.envelope{
+    width:340px;
+    height:220px;
+    background:#222;
+    border-radius:15px;
+    position:relative;
+    box-shadow:0 0 40px rgba(255, 77, 166,0.4);
+    overflow:hidden;
+}
+
+.flap{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:linear-gradient(45deg,#ff4da6,#6a00f4);
+    clip-path: polygon(0 0, 100% 0, 50% 65%);
+    transform-origin:top;
+    transition:1s ease;
+}
+
+.letter{
+    position:absolute;
+    width:90%;
+    height:200px;
+    background:#fff;
+    color:#333;
+    left:5%;
+    top:15px;
+    border-radius:12px;
+    padding:20px;
+    box-sizing:border-box;
+    transform:translateY(140px);
+    transition:1s ease;
+    overflow:auto;
+}
+
+.open .flap{
+    transform:rotateX(180deg);
+}
+
+.open .letter{
+    transform:translateY(-30px);
+}
+
+h2{
+    text-align:center;
+    background:linear-gradient(45deg,#ff4da6,#6a00f4);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    margin-top:0;
+}
+
+ul{
+    padding-left:18px;
+}
+
+.system{
+    background:#fce4ff;
+    padding:8px;
+    border-radius:8px;
+    font-family:monospace;
+    font-size:13px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Floating hearts -->
+<script>
+for(let i=0;i<20;i++){
+    let heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="💖";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.animationDuration=(3+Math.random()*3)+"s";
+    document.body.appendChild(heart);
+}
+</script>
+
+<div class="envelope-wrapper" onclick="openEnvelope()">
+    <div class="envelope">
+        <div class="flap"></div>
+        <div class="letter">
+            <h2>Happy Birthday,Mg</h2>
+
+            <p>
+                If love were code, you would be my perfectly written algorithm.
+                You fix my bugs, upgrade my mood, and protect my heart like the strongest firewall.
+            </p>
+
+            <p>
+               Thank you for always debugging my problems and supporting me like my strongest server.
+            </p>
+
+            <p><strong>May your life be full of:</strong></p>
+            <ul>
+                <li>Successful projects</li>
+                <li>Creative ideas</li>
+                <li>High salary</li>
+                <li>Endless love (one & only for me)</li>
+            </ul>
+
+            <div class="system">
+                System.out.println("You have successfully unlocked another amazing year of life!");
+            </div>
+
+            <p style="text-align:center; font-weight:bold; margin-top:15px;">
+                Happy Birthday! My forever favorite person, Chit tal!
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+function openEnvelope(){
+    document.querySelector(".envelope").classList.toggle("open");
+}
+</script>
+
+</body>
+</html>
